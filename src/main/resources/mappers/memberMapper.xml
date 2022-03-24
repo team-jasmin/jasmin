@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <insert id="insertMember" parameterType="io.github.jasmin.member.models.MemberInfo">
+        INSERT INTO
+            MEMBERS
+        VALUES
+            (
+                 #{seqMember}
+            ,    #{memberId}
+            ,    #{memberPwd}
+            )
+    </insert>
+
+    <select id="selectMember" resultType="io.github.jasmin.member.models.MemberInfo" parameterType="io.github.jasmin.member.models.ReqMember">
+        SELECT
+            *
+        FROM
+            MEMBERS
+        WHERE
+            MEMBERID = #{memberId}
+    </select>
+
+    <select id="selectMember" resultType="io.github.jasmin.member.models.MemberInfo" parameterType="io.github.jasmin.member.models.ReqMember">
+        SELECT
+            *
+        FROM
+            MEMBERS
+    </select>
+</mapper>
