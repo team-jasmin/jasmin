@@ -1,2 +1,7 @@
-package io.github.jasmin.jtpark.member;public class MemberService {
+package io.github.jasmin.jtpark.member;
+
+public class MemberService {
+
+
+
 }
