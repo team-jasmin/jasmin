@@ -1,17 +1,18 @@
 package io.github.jasmin.member.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import io.github.jasmin.member.models.MemberInfo;
 import io.github.jasmin.member.models.ReqMember;
 import io.github.jasmin.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/member")
 public class MemberController {
@@ -43,4 +44,4 @@ public class MemberController {
         return memberService.deleteMember(reqMember);
     }
 
-}//class
+}

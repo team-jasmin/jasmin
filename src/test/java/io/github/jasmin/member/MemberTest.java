@@ -1,12 +1,11 @@
 package io.github.jasmin.member;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import io.github.jasmin.member.controller.MemberController;
 import io.github.jasmin.member.models.MemberInfo;
-import io.github.jasmin.member.models.ReqMember;
 
 public class MemberTest {
 
