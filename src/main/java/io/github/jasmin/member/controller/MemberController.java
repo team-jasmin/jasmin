@@ -33,4 +33,14 @@ public class MemberController {
         return memberService.selectMemberAll();
     }
 
+    @PostMapping("/update")
+    public Integer updateMember(MemberInfo memberInfo) throws Exception {
+        return memberService.updateMember(memberInfo);
+    }
+
+    @PostMapping("/delete")
+    public Integer deleteMember(ReqMember reqMember) throws Exception {
+        return memberService.deleteMember(reqMember);
+    }
+
 }//class

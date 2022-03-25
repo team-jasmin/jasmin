@@ -43,4 +43,23 @@ public class MemberService {
         return memberMapper.selectMemberAll();
     }
 
+    /**
+     * 멤버 정보업데이트
+     * @param memberInfo
+     * @return integer
+     * @throws SQLException
+     */
+    public Integer updateMember(MemberInfo memberInfo) throws SQLException {
+        return memberMapper.updateMember(memberInfo);
+    }
+
+    /**
+     * 멤버 정보삭제
+     * @param reqMember
+     * @return integer
+     */
+    public Integer deleteMember(ReqMember reqMember) throws SQLException{
+        return memberMapper.deleteMember(reqMember);
+    }
+
 }//class

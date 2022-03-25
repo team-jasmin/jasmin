@@ -18,4 +18,10 @@ public interface MemberMapper {
 
     /** 멤버 전체조회 */
     List<MemberInfo> selectMemberAll() throws SQLException;
+
+    /** 멤버 정보업데이트 */
+    Integer updateMember(MemberInfo memberInfo) throws SQLException;
+
+    /** 멤버 정보삭제 */
+    Integer deleteMember(ReqMember reqMember) throws SQLException;
 }
