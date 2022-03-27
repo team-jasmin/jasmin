@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/member")
 public class MemberController {
-
+  
     private final MemberService memberService;
 
     @PostMapping("/insert")
