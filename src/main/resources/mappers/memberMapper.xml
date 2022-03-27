@@ -2,7 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTO Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper>
+<mapper namespace="io.github.jasmin.member.mapper.MemberMapper">
+
     <insert id="insertMember" parameterType="io.github.jasmin.member.models.MemberInfo">
         INSERT INTO
             MEMBERS
@@ -23,10 +24,26 @@
             MEMBERID = #{memberId}
     </select>
 
-    <select id="selectMember" resultType="io.github.jasmin.member.models.MemberInfo" parameterType="io.github.jasmin.member.models.ReqMember">
+    <select id="selectMemberAll" resultType="io.github.jasmin.member.models.MemberInfo" parameterType="io.github.jasmin.member.models.ReqMember">
         SELECT
             *
         FROM
             MEMBERS
     </select>
+
+    <update id="updateMember" parameterType="io.github.jasmin.member.models.MemberInfo">
+        UPDATE
+            MEMBERS
+        SET 
+            MEMBERPWD = #{memberPwd}
+        WHERE 
+            MEMBERID = #{memberId}
+    </update>
+
+    <delete id="deleteMember" parameterType="io.github.jasmin.member.models.ReqMember">
+        DELETE FROM
+            MEMBERS
+        WHERE
+            MEMBERID = #{memberId}
+    </delete>
 </mapper>
