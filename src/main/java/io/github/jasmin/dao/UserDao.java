@@ -16,7 +16,7 @@ public class UserDao {
         users.add(new User(2,"jungtae","pjt","1234"));
         users.add(new User(3,"seongjae","lsj","1234"));
         users.add(new User(4,"sangbum","lsb","1234"));
-        users.add(new User(4,"areum","jar","1234"));
+        users.add(new User(5,"areum","jar","1234"));
     }
 
     public List<User> getAllUsers() {

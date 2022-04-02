@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @PutMapping("/{userid}")
-    public void modiyUser(@PathVariable String userid, @RequestBody User user){
+    public void modifyUser(@PathVariable String userid, @RequestBody User user){
         userService.modifyUser(userid, user);
     }
 
