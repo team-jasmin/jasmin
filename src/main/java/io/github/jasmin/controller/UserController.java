@@ -1,29 +1,39 @@
 package io.github.jasmin.controller;
 
-import io.github.jasmin.service.TestService;
+import io.github.jasmin.model.User;
+import io.github.jasmin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Map;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
-@RequestMapping("/")
-public class HomeController {
-
+@RequestMapping("/users")
+public class UserController {
     @Autowired
-    private TestService testService;
+    private UserService userService;
 
     @GetMapping("")
-    public String test(){
-        return "test man~";
+    public List<User> getAllUsers(){
+        return userService.getAllUsers();
     }
 
-    @GetMapping("/test")
-    public Map<String, String> testMethod(){
-        Map<String, String> res = this.testService.getTest();
+    @GetMapping("/{userid}")
+    public User getUserByUserid(@PathVariable String userid){
+        return userService.getUserByUserId(userid);
+    }
 
-        return res;
+    @PostMapping("")
+    public User registerUser(@RequestBody User user){
+        return userService.registerUser(user);
+    }
+
+    @PutMapping("/{userid}")
+    public void modiyUser(@PathVariable String userid, @RequestBody User user){
+        userService.modifyUser(userid, user);
+    }
+
+    @DeleteMapping("/{userid}")
+    public void removeUser(@PathVariable String userid){
+        userService.removeUser(userid);
     }
 }
